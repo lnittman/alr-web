@@ -1,75 +1,112 @@
 "use client"
 
-import { Info, Moon, Send, Sun, Waves } from 'lucide-react';
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from 'react';
 
-import SplineSection from "@/components/SplineSection";
+import { Instagram } from 'lucide-react';
+import Image from 'next/image';
+
+import CenterContent from "@/components/CenterContent";
+import Controls from "@/components/Controls"
+import Header from "@/components/Header"
+import MenuToggle from "@/components/MenuToggle"
+import ScanCarousel from "@/components/ScanCarousel"
 
 export default function Home() {
-  const [theme, setTheme] = useState('light');
-  const [showInfo, setShowInfo] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [mode, setMode] = useState('home');
 
-  const toggleInfo = () => {
-    setShowInfo(!showInfo);
+  const headerRef = useRef(null);
+
+  const changeMode = (newMode: string) => {
+    console.log(newMode);
+    setMode(newMode);
+
+    setMenuOpen(false);
   };
 
-  const toggleMail = () => {
-    // TODO 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  const splineSectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
-
-  useEffect(() => {
-    if (splineSectionRef.current) {
-      splineSectionRef.current.addEventListener('click', toggleInfo);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (headerRef.current && !headerRef.current.contains(event.target)) {
+      setMenuOpen(false);
     }
-  }, [splineSectionRef]);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
-    <div className="flex flex-row w-screen h-screen">
-      <div className="flex flex-row w-full h-full relative">
-        <div className="w-full mt-6 mb-6 ml-6 mr-6 relative overflow-hidden" style={{ borderRadius: '10px' }}>
-          <SplineSection ref={splineSectionRef} />
+    <div className={`flex items-center justify-center w-screen h-screen`}>
 
-          {!showInfo &&
-            <div className={`absolute inset-0 flex justify-center items-center logo-fade-in`}>
-              <Waves size={64} style={{ color: 'var(--text-color)' }} />
-            </div>
-          }
+      {/* top left - header */}
+      <Header changeMode={changeMode} menuOpen={menuOpen} ref={headerRef} /> 
 
-          {showInfo && (
-            <div className={`information-placard fade-in ${theme === 'light' ? 'information-placard-light' : 'information-placard-dark'}`}>
-            </div>
-          )}
+      {/* top left - controls */}
+      <Controls menuOpen={menuOpen} />
 
-          <button onClick={toggleTheme} className="absolute bottom-4 left-4">
-            <div className={`transition-opacity`}>
-              {theme === 'light' ? <Sun size={40} /> : <Moon size={40} />}
-            </div>
-          </button>
-
-          <button onClick={toggleInfo} className="absolute bottom-4 left-20">
-            <div className={`transition-opacity`}>
-              <Info size={40} />
-            </div>
-          </button>
-
-          <button onClick={toggleMail} className="absolute bottom-4 left-36">
-            <div className={`transition-opacity`}>
-              <Send size={40} />
-            </div>
-          </button>
-        </div>
+      {/* top center - logo */}
+      <div className={`absolute top-2 rounded-image`}>
+        <Image
+          className={`blur-effect ${menuOpen ? 'blur-sm' : ''}`}
+          src="/stamplogo.png"
+          alt="stamp logo"
+          width={500}
+          height={300}
+        />
       </div>
+
+      {/* top right */}
+      <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
+
+      <CenterContent mode={mode} menuOpen={menuOpen} />
+
+      {mode === 'home' && (
+        <ScanCarousel menuOpen={menuOpen} />
+      )}
+
+
+      {mode === 'about' && (
+        <div>
+        </div>
+      )}
+
+      {mode === 'works' && (
+        <div>
+        </div>
+      )}
+
+      {mode === 'services' && (
+        <div>
+        </div>
+      )}
+
+      {mode === 'clients' && (
+        <div>
+        </div>
+      )}
+
+      {mode === 'stockist' && (
+        <div>
+        </div>
+      )}
+
+      {mode === 'press' && (
+        <div>
+        </div>
+      )}
+
+      {/* bottom right - ig */}
+
+      <a href="https://www.instagram.com/audreylouisereynolds/?hl=en" target="_blank" rel="noopener noreferrer" className="absolute bottom-12 right-4 z-20">
+        <Instagram size={32} className="icon active" />
+      </a>
     </div>
   )
 }

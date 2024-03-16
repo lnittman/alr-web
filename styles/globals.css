@@ -4,20 +4,14 @@
  
 @layer base {
   :root {
-    --background-light: #ffffff; /* White background */
-    --background-dark: #27272a; /* Dark background */
-    --color-light: #ffffff; /* White color for light mode text/icons */
-    --color-dark: #000000; /* Dark color for dark mode text/icons */
-  }
+    --background: #ffffff;
+    --text-color: #7F8A93;
 
-  .light {
-    --background: var(--background-light);
-    --text-color: var(--color-light);
-  }
- 
-  .dark {
-    --background: var(--background-dark);
-    --text-color: var(--color-dark);
+    --slate-0: #E0E4E8; /* Very Light Slate */
+    --slate-1: #B0B7BD; /* Light Slate */
+    --slate-2: #7F8A93; /* Medium Slate */
+    --slate-3: #505A64; /* Dark Slate */
+    --slate-4: #262E34; /* Very Dark Slate */
   }
 
   body {
@@ -27,7 +21,7 @@
 
   button > div {
     transition: opacity 0.1s ease;
-    color: var(--text-color);
+    color: var(--slate-3);
   }
 }
  
@@ -65,22 +59,30 @@
   to { opacity: 0; }
 }
 
-.information-placard {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  height: 70%;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  z-index: 10;
+.icon-container {
+  position: relative;
+  width: 24px; /* Adjust according to your icon size */
+  height: 24px; /* Adjust according to your icon size */
 }
 
-.information-placard-dark {
-  background-color: rgba(0, 0, 0, 0.7);
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.icon.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.blur-effect {
+  transition: filter 0.3s ease;
+}
+
+.blur-effect.blur-sm {
+  filter: blur(8px);
 }

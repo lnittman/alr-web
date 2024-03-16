@@ -1,0 +1,30 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Adjust based on your design */
+    height: 100%; /* Adjust based on your design */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity change */
+}
+
+.image-active {
+    opacity: 1; /* Fully visible */
+}
+
+.image-inactive {
+    opacity: 0; /* Fully hidden */
+}

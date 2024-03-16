@@ -1,0 +1,22 @@
+.controls-container {
+    display: flex;
+    /* Use flexbox to layout children */
+    gap: 10px;
+    /* Adjust the gap as needed */
+    align-items: center;
+    /* Align items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    width: auto;
+    /* Adjust width as needed */
+    height: 24px;
+    /* Adjust height as needed */
+}
+
+.controls-icon {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    /* Set default opacity to 1 */
+    transform: scale(1);
+    /* Set default scale to 1 */
+}
