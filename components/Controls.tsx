@@ -1,21 +1,34 @@
+import Image from 'next/image';
 import React from 'react';
-import { ShoppingBag, User, Search } from 'lucide-react';
+import { ShoppingBag, Search } from 'lucide-react';
 
 interface ControlsProps {
-    menuOpen: boolean;
+  menuOpen: boolean;
 };
 
 const Controls: React.FC<ControlsProps> = ({ menuOpen }) => {
   return (
-    <div className={`controls-container fixed top-6 left-5 z-20 flex space-x-4 transition-opacity duration-300 ease-in-out ${menuOpen ? 'opacity-0' : 'opacity-100'}`}>
-      <button>
-        <User size={24} className="controls-icon active" />
+    <div className={`controls-container fixed top-4 right-5 z-20 flex space-x-4 transition-opacity duration-300 ease-in-out ${menuOpen ? 'blur-sm' : ''}`} style={{ width: '160px' }}>
+      <button
+        style={{
+          userSelect: 'none',
+        }}
+      >
+        <Image src="/icons/User.svg" alt="user" layout="responsive" width={120} height={120} objectFit="contain" />
       </button>
-      <button>
-        <Search size={24} className="controls-icon active" />
+      <button
+        style={{
+          userSelect: 'none',
+        }}
+      >
+        <Image src="/icons/Search.svg" alt="user" layout="responsive" width={120} height={120} objectFit="contain" />
       </button>
-      <button>
-        <ShoppingBag size={24} className="controls-icon active" />
+      <button
+        style={{
+          userSelect: 'none',
+        }}
+      >
+        <Image src="/icons/Cart.svg" alt="user" layout="responsive" width={120} height={120} objectFit="contain" />
       </button>
     </div>
   );

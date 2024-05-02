@@ -317,11 +317,20 @@ button > div {
 .absolute {
   position: absolute;
 }
+.relative {
+  position: relative;
+}
+.bottom-12 {
+  bottom: 3rem;
+}
 .left-0 {
   left: 0px;
 }
 .left-5 {
   left: 1.25rem;
+}
+.right-4 {
+  right: 1rem;
 }
 .right-5 {
   right: 1.25rem;
@@ -335,23 +344,29 @@ button > div {
 .top-5 {
   top: 1.25rem;
 }
-.top-7 {
-  top: 1.75rem;
-}
 .top-6 {
   top: 1.5rem;
 }
-.bottom-5 {
-  bottom: 1.25rem;
+.right-0 {
+  right: 0px;
 }
-.bottom-8 {
-  bottom: 2rem;
+.left-10 {
+  left: 2.5rem;
 }
-.bottom-12 {
-  bottom: 3rem;
+.top-4 {
+  top: 1rem;
 }
-.right-4 {
-  right: 1rem;
+.left-20 {
+  left: 5rem;
+}
+.top-1 {
+  top: 0.25rem;
+}
+.bottom-4 {
+  bottom: 1rem;
+}
+.bottom-0 {
+  bottom: 0px;
 }
 .z-10 {
   z-index: 10;
@@ -362,14 +377,46 @@ button > div {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mr-4 {
+  margin-right: 1rem;
+}
+.mr-8 {
+  margin-right: 2rem;
+}
+.mr-20 {
+  margin-right: 5rem;
+}
+.mb-20 {
+  margin-bottom: 5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .flex {
   display: flex;
 }
 .h-screen {
   height: 100vh;
 }
+.h-full {
+  height: 100%;
+}
 .w-screen {
   width: 100vw;
+}
+.w-full {
+  width: 100%;
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewx(var(--tw-skew-x)) skewy(var(--tw-skew-y)) scalex(var(--tw-scale-x)) scaley(var(--tw-scale-y));
+}
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .flex-col {
   flex-direction: column;
@@ -388,12 +435,25 @@ button > div {
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 .pl-5 {
   padding-left: 1.25rem;
+}
+.pr-5 {
+  padding-right: 1.25rem;
 }
 .opacity-0 {
   opacity: 0;

@@ -8,6 +8,12 @@ __turbopack_esm__({
 });
 const chunks = [
   {
+    "path": "_next/static/chunks/components_CenterContent_tsx_bfd83a._.js",
+    "included": [
+      "[project]/components/CenterContent.tsx (ecmascript)"
+    ]
+  },
+  {
     "path": "_next/static/chunks/components_Controls_tsx_76b078._.js",
     "included": [
       "[project]/components/Controls.tsx (ecmascript)"
@@ -23,12 +29,6 @@ const chunks = [
     "path": "_next/static/chunks/components_MenuToggle_tsx_7213b8._.js",
     "included": [
       "[project]/components/MenuToggle.tsx (ecmascript)"
-    ]
-  },
-  {
-    "path": "_next/static/chunks/components_ScanCarousel_tsx_6a6512._.js",
-    "included": [
-      "[project]/components/ScanCarousel.tsx (ecmascript)"
     ]
   },
   {
@@ -137,9 +137,8 @@ const chunks = [
     ]
   },
   {
-    "path": "_next/static/chunks/node_modules_b204ac._.js",
+    "path": "_next/static/chunks/node_modules_@notbaldrick_react-crossfade-carousel_dist_index_modern_423d40.js",
     "included": [
-      "[project]/node_modules/lucide-react/dist/esm/lucide-react.js (ecmascript)",
       "[project]/node_modules/@notbaldrick/react-crossfade-carousel/dist/index.modern.js (ecmascript)"
     ]
   },

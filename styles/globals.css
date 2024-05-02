@@ -1,17 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: #ffffff;
     --text-color: #7F8A93;
 
-    --slate-0: #E0E4E8; /* Very Light Slate */
-    --slate-1: #B0B7BD; /* Light Slate */
-    --slate-2: #7F8A93; /* Medium Slate */
-    --slate-3: #505A64; /* Dark Slate */
-    --slate-4: #262E34; /* Very Dark Slate */
+    --slate-0: #E0E4E8;
+    /* Very Light Slate */
+    --slate-1: #B0B7BD;
+    /* Light Slate */
+    --slate-2: #7F8A93;
+    /* Medium Slate */
+    --slate-3: #505A64;
+    /* Dark Slate */
+    --slate-4: #262E34;
+    /* Very Dark Slate */
   }
 
   body {
@@ -19,12 +24,12 @@
     transition: background-color 0.3s ease;
   }
 
-  button > div {
+  button>div {
     transition: opacity 0.1s ease;
     color: var(--slate-3);
   }
 }
- 
+
 @layer components {
   .animate-fade-in {
     animation: fadeIn 1s ease-in-out;
@@ -32,8 +37,13 @@
 }
 
 @keyframes logoFadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .logo-fade-in {
@@ -50,19 +60,31 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .icon-container {
   position: relative;
-  width: 24px; /* Adjust according to your icon size */
-  height: 24px; /* Adjust according to your icon size */
+  width: 24px;
+  /* Adjust according to your icon size */
+  height: 24px;
+  /* Adjust according to your icon size */
 }
 
 .icon {

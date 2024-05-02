@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import React from 'react';
-import { X, Menu } from 'lucide-react';
 
 interface MenuToggleProps {
   menuOpen: boolean;
@@ -9,14 +9,33 @@ interface MenuToggleProps {
 const MenuToggle: React.FC<MenuToggleProps> = ({ menuOpen, toggleMenu }) => {
   return (
     <button
-      className="fixed top-5 right-5 z-20 focus:outline-none"
+      id="menu-toggle"
+      className="absolute top-1 left-20 z-20 focus:outline-none select-none"
       onClick={toggleMenu}
       aria-label="Toggle menu"
     >
       {menuOpen ? (
-        <X size={24} className="icon active" />
+        <div
+          className="icon active"
+          style={{
+            width: `70px`,
+            height: `70px`,
+            transform: `scale(0.35)`
+          }}
+        >
+          <Image src="/icons/X.svg" alt="instagram" layout="fill" objectFit="none" />
+        </div>
       ) : (
-        <Menu size={24} className="icon active" />
+        <div
+          className="icon active"
+          style={{
+            width: `70px`,
+            height: `70px`,
+            transform: `scale(0.3)`
+          }}
+        >
+          <Image src="/icons/Menu.svg" alt="instagram" layout="fill" objectFit="none" />
+        </div>
       )}
     </button>
   );

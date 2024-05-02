@@ -5,11 +5,11 @@
 (globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
   "path": "chunks/ssr/[next]_entry_app-renderer_tsx_1000b4._.js",
   "chunks": [
-    "chunks/ssr/node_modules_345eec._.js",
+    "chunks/ssr/node_modules_71968d._.js",
+    "chunks/ssr/components_CenterContent_tsx_289669._.js",
     "chunks/ssr/components_Controls_tsx_cb8dea._.js",
     "chunks/ssr/components_Header_tsx_7721f2._.js",
     "chunks/ssr/components_MenuToggle_tsx_494368._.js",
-    "chunks/ssr/components_ScanCarousel_tsx_1745dc._.js",
     "chunks/ssr/app_page_tsx_389f8f._.js",
     "chunks/ssr/app_layout_tsx_47e167._.js",
     "chunks/ssr/_env_b53fce.js",

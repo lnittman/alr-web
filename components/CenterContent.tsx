@@ -12,22 +12,22 @@ const CenterContent: React.FC<CenterContentProps> = ({ mode, menuOpen }) => {
       return <ScanCarousel menuOpen={menuOpen} />;
     case 'about':
       // Add about content here
-      return <div>About Content</div>;
+      return <div>about content</div>;
     case 'works':
       // Add works content here
-      return <div>Works Content</div>;
+      return <div>works content</div>;
     case 'services':
       // Add services content here
-      return <div>Services Content</div>;
+      return <div>services content</div>;
     case 'clients':
       // Add clients content here
-      return <div>Clients Content</div>;
+      return <div>clients content</div>;
     case 'stockist':
       // Add stockist content here
-      return <div>Stockist Content</div>;
+      return <div>stockist content</div>;
     case 'press':
       // Add press content here
-      return <div>Press Content</div>;
+      return <div>press content</div>;
     default:
       return null;
   }

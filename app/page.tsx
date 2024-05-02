@@ -1,21 +1,18 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from 'react';
-
-import { Instagram } from 'lucide-react';
 import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
 
 import CenterContent from "@/components/CenterContent";
 import Controls from "@/components/Controls"
 import Header from "@/components/Header"
 import MenuToggle from "@/components/MenuToggle"
-import ScanCarousel from "@/components/ScanCarousel"
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mode, setMode] = useState('home');
 
-  const headerRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const changeMode = (newMode: string) => {
     console.log(newMode);
@@ -24,14 +21,14 @@ export default function Home() {
     setMenuOpen(false);
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   const handleClickOutside = (event: MouseEvent) => {
-    if (headerRef.current && !headerRef.current.contains(event.target)) {
+    if (event.target instanceof Element && headerRef.current && !headerRef.current.contains(event.target as Node) && !event.target.closest("#menu-toggle")) {
       setMenuOpen(false);
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   useEffect(() => {
@@ -45,16 +42,13 @@ export default function Home() {
   return (
     <div className={`flex items-center justify-center w-screen h-screen`}>
 
-      {/* top left - header */}
-      <Header changeMode={changeMode} menuOpen={menuOpen} ref={headerRef} /> 
-
-      {/* top left - controls */}
-      <Controls menuOpen={menuOpen} />
+      {/* top left */}
+      <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
       {/* top center - logo */}
       <div className={`absolute top-2 rounded-image`}>
         <Image
-          className={`blur-effect ${menuOpen ? 'blur-sm' : ''}`}
+          className={`select-none blur-effect ${menuOpen ? 'blur-sm' : ''}`}
           src="/stamplogo.png"
           alt="stamp logo"
           width={500}
@@ -62,51 +56,32 @@ export default function Home() {
         />
       </div>
 
-      {/* top right */}
-      <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      {/* top right - controls */}
+      <div>
+        <Controls menuOpen={menuOpen} />
+      </div>
 
+      {/* left */}
+      <Header changeMode={changeMode} menuOpen={menuOpen} ref={headerRef} />
+
+      {/* center */}
       <CenterContent mode={mode} menuOpen={menuOpen} />
 
-      {mode === 'home' && (
-        <ScanCarousel menuOpen={menuOpen} />
-      )}
-
-
-      {mode === 'about' && (
-        <div>
+      {/* bottom right*/}
+      <a href="https://www.instagram.com/audreylouisereynolds/?hl=en" target="_blank" rel="noopener noreferrer" className={`icon active bottom-0 right-4 z-20 ${menuOpen ? 'blur-sm' : ''}`}>
+        <div
+          style={{
+            width: `100px`,
+            height: `100px`,
+            position: 'absolute',
+            bottom: '0',
+            right: '0',
+            transform: `scale(0.4)`
+          }}
+        >
+          <Image src="/icons/IG.svg" alt="instagram" layout="fill" objectFit="none" />
         </div>
-      )}
-
-      {mode === 'works' && (
-        <div>
-        </div>
-      )}
-
-      {mode === 'services' && (
-        <div>
-        </div>
-      )}
-
-      {mode === 'clients' && (
-        <div>
-        </div>
-      )}
-
-      {mode === 'stockist' && (
-        <div>
-        </div>
-      )}
-
-      {mode === 'press' && (
-        <div>
-        </div>
-      )}
-
-      {/* bottom right - ig */}
-
-      <a href="https://www.instagram.com/audreylouisereynolds/?hl=en" target="_blank" rel="noopener noreferrer" className="absolute bottom-12 right-4 z-20">
-        <Instagram size={32} className="icon active" />
       </a>
-    </div>
+    </div >
   )
 }
