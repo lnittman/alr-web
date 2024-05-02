@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import { ShoppingBag, Search } from 'lucide-react';
 
 interface ControlsProps {
   menuOpen: boolean;

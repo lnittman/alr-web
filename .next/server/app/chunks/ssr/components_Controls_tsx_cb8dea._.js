@@ -30,12 +30,12 @@ const Controls = ({ menuOpen })=>{
                     objectFit: "contain"
                 }, void 0, false, {
                     fileName: "<[project]/components/Controls.tsx>",
-                    lineNumber: 17,
+                    lineNumber: 16,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "<[project]/components/Controls.tsx>",
-                lineNumber: 12,
+                lineNumber: 11,
                 columnNumber: 7
             }, this),
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("button", {
@@ -51,12 +51,12 @@ const Controls = ({ menuOpen })=>{
                     objectFit: "contain"
                 }, void 0, false, {
                     fileName: "<[project]/components/Controls.tsx>",
-                    lineNumber: 24,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "<[project]/components/Controls.tsx>",
-                lineNumber: 19,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$28$ecmascript$29$__["jsxDEV"]("button", {
@@ -72,18 +72,18 @@ const Controls = ({ menuOpen })=>{
                     objectFit: "contain"
                 }, void 0, false, {
                     fileName: "<[project]/components/Controls.tsx>",
-                    lineNumber: 31,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "<[project]/components/Controls.tsx>",
-                lineNumber: 26,
+                lineNumber: 25,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "<[project]/components/Controls.tsx>",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 5
     }, this);
 };
